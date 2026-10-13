@@ -5,7 +5,7 @@
 This folder is a static website for GitHub Pages. It needs no server, database or build step.
 Everything runs in the visitor's browser.
 
-> **Unzip first.** On Windows, right-click the zip and choose **Extract All**. On a Mac, double-click it. Then open `index.html` from the unzipped folder. If you open `index.html` while you're still inside the zip, the ordering pages can't load their photos and scripts.
+> **Unzip first.** On Windows, right-click the zip and choose **Extract All**. On a Mac, double-click it. Then open `index.html` from the unzipped folder. If you open `index.html` while you're still inside the zip, the ordering page can't load its pictures and scripts.
 
 ## 1. Put it on GitHub Pages (about 5 minutes)
 
@@ -45,25 +45,16 @@ Things that were proposed (not from your menu photo) and should be checked:
 - Drinks: iced tea $2.75, can soda $2.50, water $1.75, Vietnamese iced coffee $4.95
 - **Sesame Garlic Tofu Bowl $9.00**: a new plant-based bowl. It is built from the tofu that is already in the Google Sheet. It is not in the 10 signature rows there yet.
 
-## 4. Two looks: photos or illustrations
+## 4. Food pictures
 
-- **`order.html`**: ordering page with photos (Unsplash photos). The "Order online" buttons point here.
-- **`order-illustrated.html`**: the same ordering page, but with flat illustrations of each bowl drawn for Riceline (in `assets/illus/`, SVG). Each bowl drawing is built from that bowl's real recipe: base, protein, veggie, toppings, sauce and finish.
+Every food picture is an **illustration drawn for Riceline** (SVG files in `assets/illus/`). Each bowl drawing is built from that bowl's real recipe: base, protein, veggie, toppings, sauce and finish. There are no stock photos, so no credits are needed.
 
-To use the illustrated ordering page instead, rename `order.html` to `order-photos.html`, then rename `order-illustrated.html` to `order.html`.
-Or, in `config.js`, add the line `imageStyle: "illustration",` to switch the photo version to illustrations as well.
+**`index.html`** (the homepage) is the fast menu. Its prices are written into the page. If you change a price in `data/menu.js`, also change it in `index.html`, or ask Claude to rebuild it.
 
-**`index.html`** (the homepage) is the text menu: everything on one page with prices, calories and allergens, the hours and address, and a Print button. Its prices are written into the page. If you change a price in `data/menu.js`, also change it in `index.html`, or ask Claude to rebuild it.
+## 5. Switching to your own photos later
 
-## 5. Replace the photos with your own
-
-The photos are free Unsplash photos that **illustrate similar dishes**. They are not your food. Credits are in `credits.html`.
-Once you have real photos, replace them in `assets/img/` and **keep the same file names**:
-- `<name>-560.webp`: 560×420 px (menu cards)
-- `<name>-1000.webp`: 1000×750 px (item detail)
-- `hero-900.webp` / `hero-1600.webp`: top banner
-
-Any converter that outputs WebP works, for example squoosh.app. Once all photos are yours, you can delete `credits.html` and the "Photo credits" link in `index.html`.
+1. Take photos 4:3 (for example 1000×750 px) and save them as WebP in `assets/img/`, named `<name>-560.webp` (menu cards) and `<name>-1000.webp` (item detail). Use the same `<name>` as the files in `assets/illus/` (bulgogi, birria, tofu, coffee…).
+2. In `config.js`, add the line `imageStyle: "photo",`.
 
 ## 6. Calories & allergens
 
@@ -81,18 +72,17 @@ Any converter that outputs WebP works, for example squoosh.app. Once all photos 
 
 ```
 index.html            HOMEPAGE: fast menu in the print-menu style; every card opens that dish on order.html
-order.html            ordering page (photos)
-order-illustrated.html ordering page (illustrations)
+order.html            ordering page
+order-illustrated.html old link, now forwards to order.html
 print-menu.html       one-page counter menu (Letter), poster style, with a QR code to order.html; open it and press Print
 assets/fonts/         fonts for the print menu (SIL Open Font License)
-assets/illus/         Riceline illustrations (SVG)
+assets/illus/         Riceline food illustrations (SVG), used on every page
 config.js             store settings (address, hours, phone, ordering)
 data/menu.js          all menu items, prices, nutrition, allergens
 assets/css/styles.css look & feel (colors at the top)
 assets/js/core.js     price / calorie / allergen math, store hours
 assets/js/ui.js       menu, filters, item sheet, bag, checkout
-assets/img/           photos (WebP) + og-image.jpg for link previews
+assets/img/           og-image.jpg (link preview picture)
 assets/icons/         logo / app icons
-credits.html          photo credits (Unsplash)
 404.html, robots.txt, manifest.webmanifest, .nojekyll
 ```

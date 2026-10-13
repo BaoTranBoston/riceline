@@ -14,7 +14,7 @@
   const money = (n) => '$' + (Math.round(n * 100) / 100).toFixed(2);
   const kcal = (n) => (n < 5 ? 0 : n <= 50 ? Math.round(n / 5) * 5 : Math.round(n / 10) * 10); // FDA rounding rules
   const grams = (n) => (n < 0.5 ? 0 : Math.round(n));
-  const ILLUS = (CFG.imageStyle || window.RICELINE_IMAGE_STYLE) === 'illustration';
+  const ILLUS = (CFG.imageStyle || window.RICELINE_IMAGE_STYLE || 'illustration') !== 'photo';
   const IMG = (k, size = 560) => (ILLUS ? `assets/illus/${k}.svg` : `assets/img/${k}-${size}.webp`);
   const icon = (id, cls = 'icon') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
   const uid = () => Math.random().toString(36).slice(2, 9);
