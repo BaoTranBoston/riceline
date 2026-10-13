@@ -1,9 +1,11 @@
 # Riceline — Online Menu & Order Page
 
-**How the site works:** customers land on the **text menu** (`index.html`). Every dish name and **Order →** link opens that dish on the ordering page (`order.html`), ready for "Add to bag". The **Order online** buttons (top bar, under the title, and the floating button on phones) open the ordering page. On the ordering page, **Full menu ↗** goes back.
+**How the site works:** customers land on a **fast one-page menu** (`index.html`): 12 bowl cards, meal deals, add-ons & drinks, and an allergen chart you can open. Every dish name and **Order →** link opens that dish on the ordering page (`order.html`), ready for "Add to bag". The **Order online** buttons (top bar, under the title, and the floating button on phones) open the ordering page. On the ordering page, **Full menu ↗** goes back.
 
 This folder is a static website for GitHub Pages. It needs no server, database or build step.
 Everything runs in the visitor's browser.
+
+> **Unzip first.** On Windows, right-click the zip and choose **Extract All**. On a Mac, double-click it. Then open `index.html` from the unzipped folder. If you open `index.html` while you're still inside the zip, the ordering pages can't load their photos and scripts.
 
 ## 1. Put it on GitHub Pages (about 5 minutes)
 
@@ -78,9 +80,11 @@ Any converter that outputs WebP works, for example squoosh.app. Once all photos 
 ## Files
 
 ```
-index.html            HOMEPAGE: text menu (read / print), links into ordering
+index.html            HOMEPAGE: fast menu in the print-menu style; every card opens that dish on order.html
 order.html            ordering page (photos)
 order-illustrated.html ordering page (illustrations)
+print-menu.html       one-page counter menu (Letter), poster style, with a QR code to order.html; open it and press Print
+assets/fonts/         fonts for the print menu (SIL Open Font License)
 assets/illus/         Riceline illustrations (SVG)
 config.js             store settings (address, hours, phone, ordering)
 data/menu.js          all menu items, prices, nutrition, allergens
