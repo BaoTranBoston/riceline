@@ -18,8 +18,8 @@ window.RICELINE_CONFIG = {
   // Text used for the "Get directions" link (Google Maps search)
   mapsQuery: "Huntington Ave, Boston, MA 02115",
 
-  // ---- Contact (PLACEHOLDER — 555-01xx numbers are fictional) ----
-  phone: "(617) 555-0142",
+  // ---- Contact (PLACEHOLDER — replace with your real number, e.g. "(617) 123-4567") ----
+  phone: "(617) xxx-xxxx",
   email: "orders@example.com",
 
   // ---- Opening hours (24h clock, Boston time) ----
@@ -50,7 +50,7 @@ window.RICELINE_CONFIG = {
   //  "email" = opens the guest's email app with the order addressed to email above
   orderMode: "demo",
   orderLink: "",                 // e.g. "https://order.toasttab.com/online/riceline"
-  smsNumber: "",                 // e.g. "+16175550142"
+  smsNumber: "",                 // e.g. "+16171234567"
 
   // ---- Deals shown on the page ----
   groupOrder: { minBowls: 10, orderBy: "10:30", discount: "10% off" },

@@ -23,7 +23,7 @@ All of these are in **`config.js`**. Open it on GitHub, click the pencil (Edit),
 | Setting | Now | What to do |
 |---|---|---|
 | `address`, `mapsQuery` | "Huntington Ave, Boston 02115" (placeholder) | Your real street address |
-| `phone` | (617) 555-0142 (**fictional** 555 number) | Your real phone |
+| `phone` | (617) xxx-xxxx (placeholder, not callable) | Your real phone |
 | `email` | orders@example.com | Your real email |
 | `hours` | Mon–Fri 10:30–21:00, Sat 11–21, Sun 11–20 | Your real hours (24-hour format) |
 | `orderMode` | `"demo"` (orders are **not** sent anywhere) | See below |
